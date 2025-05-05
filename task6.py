@@ -12,3 +12,20 @@ inventory = {
 # удалите "кинжал" из списка, который хранится по ключу "сумка"
 # добавьте 50 к числу, которое хранится по ключу "золото"
 # Выведите на экран обновлённый словарь inventory.
+
+inventory["карман"] = ["ракушки", "ягода", "платок"]
+inventory["сумка"].sort()
+inventory["сумка"].remove("кинжал")
+inventory['золото']+=50
+# print(inventory)
+
+for i in inventory:
+    j=0
+    sada=str(i)+": "
+    if i=="золото":
+        sada+=str(inventory[i])
+    # print(i)
+    while i!='золото' and j < len(inventory[i]):
+        sada+= str(inventory[i][j]) + ", "
+        j+=1
+    print(sada)

@@ -4,3 +4,39 @@
 # и предлагает пользователю ввести слово для перевода. 
 # Если введенного слова нет в словаре выводится сообщение "нет такого слова".
 # Используйте словари для словаря:)
+translator={
+    "яблоко": "apple",
+    "конь": "horse",
+    "кровать": "bad",
+    "борщ": "borsch",
+    "мама": "mom",
+    "папа": "dad",
+    "ноутбук": "laptop",
+    "дом": "house",
+    "автомат калашникова": "AK-47",
+    "блокнот": "notebook",
+    "компьютер": "computer",
+    "монитор": "monitor",
+    "дерево": "tree",
+    "поезд": "train",
+    "авп": "AWP",
+    "дверь": "door",
+}
+s=input("Введите слово что нужно перевести с русского на английский: ")
+end_words=["end", "конец", "конец работы", "end of work", "ВЫРУБАЙ!", "Scheiße!"]
+while not(s in end_words):
+    s.lower()
+    delta = s.split(" ")
+    # delta=list(filter(None, delta))
+    # print(delta)
+    while "" in delta:
+        delta.remove("")
+    s=" ".join(delta)
+
+    # print(s)
+    if s in translator:
+        print(s + ": " + translator[s])
+    else:
+        print("ERROR: UNDEFINED WORD!")
+    s=input("Введите слово что нужно перевести с русского на английский: ")
+print("Работа завершена.")
